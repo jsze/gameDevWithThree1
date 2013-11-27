@@ -21,3 +21,14 @@ camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,
 camera.position.z = 500;
 
 renderer.render(scene, camera);
+
+animate();
+
+function animate() {
+	requestAnimationFrame(animate);
+
+	mesh.rotation.x = Date.now() * 0.00005;
+	mesh.rotation.y = Date.now() * 0.0001;
+
+	renderer.render(scene, camera);
+}
